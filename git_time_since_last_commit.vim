@@ -18,4 +18,4 @@ function! Check_time_since_last_commit()
     endif
 endfunction
 
-command !CheckTimeSinceLastCommit :call Check_time_since_last_commit()
+command! CheckTimeSinceLastCommit :call Check_time_since_last_commit()
