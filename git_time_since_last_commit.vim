@@ -1,5 +1,5 @@
 if exists('g:git_time_since_last_commit_loaded')
-    " finish
+    finish
 endif
 let g:git_time_since_last_commit_loaded = 1
 
@@ -17,3 +17,5 @@ function! Check_time_since_last_commit()
         echohl None
     endif
 endfunction
+
+command !CheckTimeSinceLastCommit :call Check_time_since_last_commit()
