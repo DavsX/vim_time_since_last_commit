@@ -13,7 +13,7 @@ function! Check_time_since_last_commit()
 
     if l:commit_time > 300
         echohl RedBar
-        echo "WARNING! Last git commit was made [".l:commit_time."] seconds ago!"
+        echon "WARNING! Last git commit was made [".l:commit_time."] seconds ago!"
         echohl None
     endif
 endfunction
