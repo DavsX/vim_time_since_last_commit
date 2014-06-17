@@ -11,7 +11,7 @@ function! Check_time_since_last_commit()
 
     let l:commit_time = l:now - l:last_commit
 
-    if l:commit_time > 600
+    if l:commit_time > 900
         echohl RedBar
         echo "WARNING! Last git commit was made [".l:commit_time."] seconds ago!"
         echohl None
