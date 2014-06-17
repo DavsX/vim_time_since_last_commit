@@ -4,7 +4,7 @@ endif
 let g:git_time_since_last_commit_loaded = 1
 
 function! Check_time_since_last_commit()
-    hi! RedBar ctermfg=white ctermbg=red
+    hi! RedBar ctermfg=black ctermbg=red
 
     let l:now = system("date +%s")
     let l:last_commit = system("git log --pretty=format:%at -1 2> /dev/null || date +%s")
