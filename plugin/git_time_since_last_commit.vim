@@ -19,6 +19,8 @@ function! Check_time_since_last_commit()
 endfunction
 
 function! s:ShowError(commit_time)
+    redraw!
+
     echohl RedBar
     echo "WARNING! Last git commit was made [".a:commit_time."] seconds ago!"
     echohl None
