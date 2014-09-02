@@ -11,7 +11,7 @@ function! Check_time_since_last_commit()
 
     let l:commit_time = l:now - l:last_commit
 
-    if l:commit_time > 900
+    if l:commit_time > 1200
         while s:ShowError(commit_time) ==? 0
         endwhile
     endif
