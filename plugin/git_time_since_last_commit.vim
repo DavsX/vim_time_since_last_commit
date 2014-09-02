@@ -1,7 +1,9 @@
 if exists('g:git_time_since_last_commit_loaded')
-    " finish
+    finish
 endif
 let g:git_time_since_last_commit_loaded = 1
+
+let s:last_error_time = 0
 
 function! Check_time_since_last_commit()
     hi! RedBar ctermfg=black ctermbg=red
@@ -10,8 +12,14 @@ function! Check_time_since_last_commit()
     let l:last_commit = system("git log --pretty=format:%at -1 2> /dev/null || date +%s")
 
     let l:commit_time = l:now - l:last_commit
+    let l:last_error  = l:now - s:last_error_time
 
-    if l:commit_time > 1200
+    echo l:now
+    echo l:last_error
+    echo l:commit_time
+
+    if l:commit_time > 1200 && l:last_error > 300
+        let s:last_error_time = l:now
         while s:ShowError(commit_time) ==? 0
         endwhile
     endif
